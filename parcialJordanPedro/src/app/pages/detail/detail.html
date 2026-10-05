@@ -1,0 +1,19 @@
+<div class="detalle-container">
+  @if (pedido(); as p) {
+    <div class="detalle">
+      
+      <h2>{{ p.cliente }}</h2>
+        <span> Plato: {{p.plato}}</span>
+        <span> Estado:{{p.estado}}</span>
+        <span> Fecha:{{p.fecha}}</span>
+        <span> Cantidad:{{p.cantidad}}</span>
+        <span> Precio Unitario:{{p.precioUnitario}}</span>
+        <span>Cantidad X precio:${{cuenta()}} </span>        
+    </div>
+    <div class="acciones">
+      <a class="volver" routerLink="/">Volver</a>
+    </div>
+  } @else {
+    <p>Cargando...</p>
+  }
+</div>

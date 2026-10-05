@@ -1,0 +1,79 @@
+<form [formGroup]="Pform" (ngSubmit)="onSubmit()">
+
+<fieldset>
+<label for="cliente">Nombre Del Cliente</label>
+<input type="text" name="cliente" id="cliente" >
+@if(cliente.hasError("required") && cliente.touched) {
+    <p class="error">No debe estar vacio</p>
+}
+@if(cliente.hasError("minLength") && cliente.touched) {
+    <p class="error">Debe tener mas de 3 caracteres</p>
+}
+</fieldset>
+
+<fieldset>
+<label for="plato">Nombre Del Plato</label>
+<input type="text" name="plato" id="plato" >
+@if(plato.hasError("required") && plato.touched) {
+    <p class="error">No debe estar vacio</p>
+}
+@if (plato.hasError("minLength") && plato.touched) {
+    <p class="error">Debe ser mayor a 4 caracteres</p>
+}
+@if (plato.hasError("maxLength") && plato.touched) {
+    <p class="error">debe ser menor a 20 caracteres</p>
+}
+</fieldset>
+
+<fieldset>
+    <label for="cantidad">Cantidad</label>
+<input type="number" name="cantidad" id="cantidad">
+@if(cantidad.hasError("required") && cantidad.touched) {
+    <p class="error">No debe estar vacio</p>
+}
+
+@if(cantidad.hasError("pattern") && cantidad.touched) {
+    <p class="error">Solo debe ser numeros</p>
+}
+
+@if(cantidad.hasError("min") && cantidad.touched) {
+    <p class="error">debe ser mayor a 0</p>
+}
+</fieldset>
+
+<fieldset>
+    <label for="fecha">Fecha</label>
+    <input type="fecha" name="fecha" id="fecha">
+    @if (fecha.hasError("required") && fecha.touched) {
+    <p class="error">No debe estar vacio</p>
+    }   
+
+</fieldset>
+
+<fieldset>
+    <label for="precioUnitario">Precio Unitario</label>
+    <input type="number" name="precioUnitario" id="precioUnitario">
+    @if(precioUnitario.hasError("required") && precioUnitario.touched){
+        <p class="error">No debe estar vacio</p>
+    }
+     @if(precioUnitario.hasError("min") && precioUnitario.touched){
+        <p class="error">Debe ser Mayor a 1 </p>
+    }
+</fieldset>
+
+<fieldset>
+    <label for="estado">Estado</label>
+    <select name="estado" id="estado">
+        <option value="" disabled>Seleccione Estado</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="entregado">Entregado</option>
+        <option value="cancelado">Cancelado</option>
+    </select>
+    @if(estado.hasError("min") && estado.touched){
+        <p class="error">Debe ser Mayor a 1 </p>
+    }
+</fieldset>
+
+<button type="text" [disabled]="Pform.invalid">Guardar</button>
+
+</form>

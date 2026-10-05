@@ -1,0 +1,22 @@
+{
+  "pedidos": [
+    {
+      "id": "2",
+      "cliente": "María López",
+      "plato": "Pizza napolitana",
+      "cantidad": 1,
+      "precioUnitario": 3500,
+      "estado": "pendiente",
+      "fecha": "2025-10-22"
+    },
+    {
+      "id": "3",
+      "cliente": "Carlos Gómez",
+      "plato": "Ensalada César",
+      "cantidad": 3,
+      "precioUnitario": 1800,
+      "estado": "entregado",
+      "fecha": "2025-10-19"
+    }
+  ]
+}

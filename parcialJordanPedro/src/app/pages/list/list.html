@@ -1,0 +1,23 @@
+<div class="lista-container">
+<h2>Listado</h2>
+
+<input type="text" placeholder="filtrar por Plato..." (input)="filtrar($event)">
+
+
+
+<div class="listado">
+    @for (item of filtro(); track item.id) {
+        <div class="item-lista">
+            <span><strong> {{item.cliente}}</strong></span>
+            <span> {{item.plato}}</span>
+            <span> {{item.estado}}</span>
+
+        <div class="acciones">
+            <button [routerLink]="['/pedido',item.id]">Ver detalle</button>
+            <button (click)="eliminar(item.id!)">Eliminar</button>
+        </div>
+    </div>
+    }
+</div>
+
+</div>
